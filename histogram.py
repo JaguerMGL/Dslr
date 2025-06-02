@@ -1,39 +1,12 @@
-import pandas as pd
+from utils.data_utils import load_data
+from utils.hogwarts_utils import calculate_variance_between_houses
 import matplotlib.pyplot as plt
 import sys
 
-def load_dataset(filepath):
-    try:
-        return pd.read_csv(filepath)
-    except Exception as e:
-        print(f"Error loading file {filepath}: {e}")
-        exit(1)
-
-def my_max(data):
-    maximum = data[0]
-    for x in data:
-        if x > maximum:
-            maximum = x
-    return maximum
-
-def my_min(data):
-    minimum = data[0]
-    for x in data:
-        if x < minimum:
-            minimum = x
-    return minimum
-
-def calculate_variance_between_houses(df, course, houses):
-    variances = []
-    for house in houses:
-        scores = df[df["Hogwarts House"] == house][course].dropna()
-        if len(scores) > 0:
-            mean = sum(scores) / len(scores)
-            variance = sum((x - mean) ** 2 for x in scores) / len(scores)
-            variances.append(variance)
-    return my_max(variances) - my_min(variances) if len(variances) == len(houses) else float('inf')
-
 def find_homogeneous_course(df):
+    """
+    Find the course with the smallest variance difference between houses.
+    """
     houses = df["Hogwarts House"].dropna().unique()
     courses = df.columns[6:]
     homogeneous_course = None
@@ -48,6 +21,9 @@ def find_homogeneous_course(df):
     return homogeneous_course
 
 def plot_histogram_for_course(df, course):
+    """
+    Plot a histogram for a specific course, grouped by Hogwarts House.
+    """
     houses = df["Hogwarts House"].dropna().unique()
     plt.figure(figsize=(10, 6))
     for house in houses:
@@ -66,7 +42,7 @@ if __name__ == "__main__":
         print("Error: dataset_train.csv is required")
         sys.exit(1)
 
-    df = load_dataset(sys.argv[1])
+    df = load_data(sys.argv[1])
     homogeneous_course = find_homogeneous_course(df)
     if homogeneous_course:
         plot_histogram_for_course(df, homogeneous_course)
