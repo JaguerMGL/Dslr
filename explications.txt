@@ -14,3 +14,15 @@ NOTIONS DE STAT:
 - le percentile: Valeur en dessous de laquelle se trouve un certain pourcentage des données dans un ensemble ordonné. 
     Par exemple, le 25e percentile est la valeur en dessous de laquelle se trouvent 25 % des données. 
     Les percentiles permettent d'analyser la répartition des données dans une distribution.
+
+- la distance euclidienne: Mesure de la distance géométrique entre deux points dans un espace multidimensionnel. 
+    Elle est calculée comme la racine carrée de la somme des carrés des différences entre les coordonnées correspondantes des deux points. 
+    Par exemple, dans un espace à deux dimensions, la distance euclidienne entre les points (x1, y1) et (x2, y2) est donnée par :
+    sqrt((x2 - x1)^2 + (y2 - y1)^2).
+
+- la correlation de Pearson: Mesure de la relation linéaire entre deux variables. 
+    Elle est exprimée par un coefficient compris entre -1 et 1 :
+        - 1 indique une corrélation positive parfaite (les deux variables augmentent ensemble).
+        - -1 indique une corrélation négative parfaite (une variable augmente pendant que l'autre diminue).
+        - 0 indique qu'il n'y a pas de corrélation linéaire.
+    Elle est calculée comme le rapport entre la covariance des deux variables et le produit de leurs écarts-types.
