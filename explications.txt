@@ -1,0 +1,16 @@
+NOTIONS DE STAT:
+
+- l'ecart-type: Mesure de la dispersion des données autour de la moyenne. 
+    Il est exprimé dans les mêmes unités que les données et est calculé comme la racine carrée de la variance.
+
+- la variance: Mesure de la dispersion des données autour de la moyenne. 
+    Elle est calculée comme la moyenne des carrés des écarts entre chaque valeur et la moyenne. 
+    Elle est exprimée dans les unités au carré des données.
+
+- les quartiles: Valeurs qui divisent un ensemble de données ordonnées en quatre parties égales. 
+    Le premier quartile (Q1) correspond à 25 % des données, le deuxième quartile (Q2) est la médiane (50 %), 
+    et le troisième quartile (Q3) correspond à 75 % des données.
+
+- le percentile: Valeur en dessous de laquelle se trouve un certain pourcentage des données dans un ensemble ordonné. 
+    Par exemple, le 25e percentile est la valeur en dessous de laquelle se trouvent 25 % des données. 
+    Les percentiles permettent d'analyser la répartition des données dans une distribution.
