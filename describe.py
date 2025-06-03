@@ -12,9 +12,6 @@ def load_dataset(filepath):
         sys.exit(1)
 
 def is_numeric(column):
-    """
-    Check if a column contains numeric data.
-    """
     try:
         for x in column.dropna():
             x = float(x) 
@@ -23,9 +20,6 @@ def is_numeric(column):
         return False
 
 def describe(df):
-    """
-    Generate descriptive statistics for numeric columns in a DataFrame.
-    """
     numeric_cols = [col for col in df.columns if is_numeric(df[col])]
     stats = {
         "Count": [],
@@ -59,17 +53,11 @@ def describe(df):
     return numeric_cols, stats
 
 def truncate_feature_name(name):
-    """
-    Truncate feature names for display purposes.
-    """
     if len(name) > 9:
         return name[:9] + "."
     return name
 
 def print_describe(numeric_cols, stats):
-    """
-    Print descriptive statistics in a formatted table.
-    """
     col_width = 15
     print("Statistic".ljust(col_width), end="")
     for col in numeric_cols:
@@ -98,7 +86,7 @@ def print_describe(numeric_cols, stats):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: dataset_train.csv required")
+        print("Error: only dataset_train.csv required")
         sys.exit(1)
 
     db = load_data(sys.argv[1])

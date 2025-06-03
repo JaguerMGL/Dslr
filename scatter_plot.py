@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 import sys
 
 def find_most_correlated_features(data):
-    """
-    Find the two most correlated features using Pearson correlation.
-    """
     numeric_data = data.select_dtypes(include=['float64', 'int64'])
     columns = numeric_data.columns
     max_corr = 0
@@ -26,12 +23,9 @@ def find_most_correlated_features(data):
     return feature_pair
 
 def plot_scatter(data, feature1, feature2):
-    """
-    Display a scatter plot for two features with different colors based on a category.
-    """
     if "Hogwarts House" in data.columns:
         categories = data["Hogwarts House"].dropna().unique()
-        colors = {category: color for category, color in zip(categories, ['red', 'blue', 'green', 'orange'])}
+        colors = {category: color for category, color in zip(categories, ['red', 'green', 'blue', 'orange'])}
         point_colors = data["Hogwarts House"].map(colors)
         plt.scatter(data[feature1], data[feature2], alpha=0.5, c=point_colors)
         legend_handles = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color, markersize=10, label=category) 
@@ -49,7 +43,7 @@ def plot_scatter(data, feature1, feature2):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: data.csv is required")
+        print("Error: only data.csv is required")
         sys.exit(1)
     data = load_data(sys.argv[1])
     feature1, feature2 = find_most_correlated_features(data)

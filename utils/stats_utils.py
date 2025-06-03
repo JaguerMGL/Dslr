@@ -49,9 +49,6 @@ def my_quartiles(data):
     return q1, q2, q3
 
 def pearson_correlation(x, y):
-    """
-    Calculate the Pearson correlation coefficient between two lists of numbers.
-    """
     if len(x) != len(y):
         raise ValueError("Inputs x and y must have the same length.")
 

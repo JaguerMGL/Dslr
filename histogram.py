@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 import sys
 
 def find_homogeneous_course(df):
-    """
-    Find the course with the smallest variance difference between houses.
-    """
     houses = df["Hogwarts House"].dropna().unique()
     courses = df.columns[6:]
     homogeneous_course = None
@@ -21,9 +18,6 @@ def find_homogeneous_course(df):
     return homogeneous_course
 
 def plot_histogram_for_course(df, course):
-    """
-    Plot a histogram for a specific course, grouped by Hogwarts House.
-    """
     houses = df["Hogwarts House"].dropna().unique()
     plt.figure(figsize=(10, 6))
     for house in houses:
@@ -39,7 +33,7 @@ def plot_histogram_for_course(df, course):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: dataset_train.csv is required")
+        print("Error: only dataset_train.csv is required")
         sys.exit(1)
 
     df = load_data(sys.argv[1])

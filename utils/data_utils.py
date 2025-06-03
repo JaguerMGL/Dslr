@@ -2,9 +2,6 @@ import pandas as pd
 import sys
 
 def load_data(file_path):
-    """
-    Load data from a CSV file.
-    """
     try:
         return pd.read_csv(file_path)
     except FileNotFoundError:
