@@ -1,9 +1,6 @@
 from stats_utils import my_max, my_min
 
 def calculate_variance_between_houses(df, course, houses):
-    """
-    Calculate the difference between the maximum and minimum variance of a course across houses.
-    """
     variances = []
     for house in houses:
         scores = df[df["Hogwarts House"] == house][course].dropna()
