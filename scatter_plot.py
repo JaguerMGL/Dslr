@@ -43,7 +43,7 @@ def plot_scatter(data, feature1, feature2):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: only data.csv is required")
+        print("Error: only .py and data.csv required")
         sys.exit(1)
     data = load_data(sys.argv[1])
     feature1, feature2 = find_most_correlated_features(data)

@@ -33,7 +33,7 @@ def plot_histogram_for_course(df, course):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: only dataset_train.csv is required")
+        print("Error: only .py and dataset_train.csv required")
         sys.exit(1)
 
     df = load_data(sys.argv[1])

@@ -86,7 +86,7 @@ def print_describe(numeric_cols, stats):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Error: only dataset_train.csv required")
+        print("Error: only .py and dataset_train.csv required")
         sys.exit(1)
 
     db = load_data(sys.argv[1])
