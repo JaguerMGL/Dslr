@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 def my_max(data):
     maximum = data[0]
@@ -63,3 +64,7 @@ def pearson_correlation(x, y):
         return 0
 
     return numerator / math.sqrt(denominator_x * denominator_y)
+
+#transforme une valeur en une probabilité entre 0 et 1
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))

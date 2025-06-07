@@ -1,4 +1,4 @@
-from stats_utils import my_max, my_min
+from utils.stats_utils import my_max, my_min
 
 def calculate_variance_between_houses(df, course, houses):
     variances = []
